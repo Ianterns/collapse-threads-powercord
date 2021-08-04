@@ -1,0 +1,14 @@
+[class*="containerDefault--"]:not([class*="selected-"]) + [class*="container-"] {
+    overflow: hidden;
+}
+[class*="containerDefault--"]:not([class*="selected-"]) + [class*="container-"] > [class*="containerDefault--"]:not(:last-child):not([class*="selected-"]) {
+    display: none;
+}
+
+[class*="containerDefault--"]:not([class*="selected-"]) + [class*="container-"] > [class*="containerDefault--"]:last-child:not([class*="selected-"])::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, var(--background-secondary));
+    pointer-events: none;
+}
